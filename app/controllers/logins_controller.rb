@@ -7,10 +7,11 @@ MyApp.get "/logins/new" do
 end
 
 MyApp.post "/logins/create" do
-  @user = find_by_email(params["email"])
+  @user = User.find_by_email(params["email"])
+
   if @user != nil && @user.password == params["password"]
-    session["user_id"] = @user.user_id
-    redirect "welcome"
+    session["user_id"] = @user.id
+    redirect "/"
   else
     erb :"login_fail"
   end
