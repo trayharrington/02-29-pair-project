@@ -1,12 +1,17 @@
-MyApp.get ""
+MyApp.get "/signup" do
+  erb :"users/signup"
+end
 
 MyApp.post "/signup_user" do
 @user = User.new
-@users = User.all
+
   @user.name = session[:name]
   @user.email = params[:email]
   @user.password = session[:password]
   @user.save
-  redirect "user_list"
+  redirect "/user_list"
 end
-MyApp.get "/user_list"
+MyApp.get "/user_list" do
+  @users = User.all
+  erb :"users/user_list"
+end

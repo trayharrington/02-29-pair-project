@@ -1,5 +1,6 @@
-
+<h1>A list of All Users</h1>
 <table border="1">
+  <thead>
     <tr>
       <th>Users</th>
       
@@ -11,12 +12,21 @@
   <%= @users.each do |a|%>
       <tr>
         <td>a.name</td>
- 
-
-        <% end %>
-    
         
       </tr>
-    
+    <% end %>
   </tbody>
 </table>
+
+<p>
+  <% @users.each do |user| %>
+    <a href="view_user/<%= user.id%>">
+    <%= swimmer.name %> </a></p>
+  <a href="delete_user/<%= user.id%>">
+  Delete
+  --
+  <a href="edit_user/<%= user.id%>">
+  Edit
+  </a>
+</p>
+<% end %>
