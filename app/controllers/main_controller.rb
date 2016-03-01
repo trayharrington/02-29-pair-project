@@ -17,3 +17,10 @@ MyApp.get "/logout" do
   redirect "login/home"
   
 end
+MyApp.get "/enter_error" do
+  @user = User.find_by_id(session[:user_id])
+  @user.user_id = @user.user_id
+  @user.error_name = params[:error]
+  @user.save
+  redirect "results"
+end
