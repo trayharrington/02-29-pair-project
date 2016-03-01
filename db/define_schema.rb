@@ -5,7 +5,7 @@ DB.define_column("users","email","string")
 DB.define_column("users","password","string")
 
 DB.define_table("errors")
-DB.define_column("errors","error_name","string")
+DB.define_column("errors","error_input","text")
 DB.define_column("errors","error_description","text")
 DB.define_column("errors","user_id","string")
 # DB.define_table("users")
