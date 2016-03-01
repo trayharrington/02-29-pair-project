@@ -1,0 +1,30 @@
+<h1>User List</h1>
+
+<table border="1">
+  
+  <thead>
+    <tr>
+      <th colspan="3">Users</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |a|%>
+      <tr>
+        <td><%=a.name%></td>
+        <td>
+          <form action="/users/<%=a.id%>/edit">
+            <input type="submit" value="Edit">
+          </form>
+        </td>
+        <td>
+          <form action="/users/<%=a.id%>/delete" method="post">
+            <input type="submit" value="Delete">
+          </form>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<a href="/welcome">Go do your Error Decoder!</a>
