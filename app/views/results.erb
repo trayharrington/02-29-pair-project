@@ -1,1 +1,28 @@
 Here are the results
+
+
+<table border="1">
+    <tr>
+      <th>User</th>
+      <th>Error</th>
+      <th>Meaning</th>
+      <th>Resources<th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+  <%= @user.each do |user|%>
+      <tr>
+        <td>user.name</td>
+        <td>error.error_input </td>
+        <td>That could mean:</td>
+        <td>Try these resources</td>
+
+        <% end %>
+    
+        
+      </tr>
+    
+  </tbody>
+</table>
