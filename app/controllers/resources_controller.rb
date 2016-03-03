@@ -13,6 +13,7 @@ end
 
 MyApp.get "/resources" do
   @resources = Resource.all
+  @nerrors = NamedError.all
   erb :"admins/administrator"
 end
 
