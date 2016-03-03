@@ -16,11 +16,24 @@ ActiveRecord::Schema.define(version: 0) do
   enable_extension "plpgsql"
 
   create_table "errors", force: :cascade do |t|
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.text     "error_input"
-    t.text     "error_description"
-    t.string   "user_id"
+    t.integer  "user_id"
+  end
+
+  create_table "named_errors", force: :cascade do |t|
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "error_type"
+    t.string   "error_definition"
+  end
+
+  create_table "resources", force: :cascade do |t|
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "error_type_id"
+    t.string   "resource_url"
   end
 
   create_table "users", force: :cascade do |t|
