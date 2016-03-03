@@ -1,0 +1,69 @@
+
+<h1>A list of All Errors</h1>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Errors</th>
+      
+
+    </tr>
+  </thead>
+
+  <tbody>
+  <%= @nerrors.each do |a|%>
+      <tr>
+        <td>a.error_type</td>
+        <td>a.error_definition</td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+  <% @nerrors.each do |nerror| %>
+    <a href="view_nerror/<%= nerror.id%>">
+    <%= nerror.error_type %> </a></p>
+  <a href="delete_nerror/<%= nerror.id%>">
+  Delete
+  --
+  <a href="edit_nerror/<%= nerror.id%>">
+  Edit
+  </a>
+</p>
+<% end %>
+
+<h1>A list of All Resources</h1>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Resources</th>
+      
+
+    </tr>
+  </thead>
+
+  <tbody>
+  <%= @resources.each do |a|%>
+      <tr>
+        <td>a.error_type_id</td>
+        <td>a.resource_url</td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+  <% @resources.each do |resource| %>
+    <a href="view_nerror/<%= resource.id%>">
+    <%= resource.error_type_id %> </a></p>
+    <%= resource.resource_url %> </a></p>
+  <a href="delete_resource/<%= resource.id%>">
+  Delete
+  --
+  <a href="edit_resource/<%= resource.id%>">
+  Edit
+  </a>
+</p>
+<% end %>

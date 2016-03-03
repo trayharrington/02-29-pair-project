@@ -1,0 +1,31 @@
+<h1>Administrative Add Form</h1>
+
+<form action="/named_errors/create" method="post">
+
+  Error Type:<br>
+  <input type="text" name="error_type"><br>
+  <br>
+  Error Definition:<br>
+  <input type="text" name="error_definition"><br>
+  <br>
+  <input type="submit">
+
+</form>
+
+<br><br>
+
+<form action="/resource/create" method="post">
+
+  Error Type ID:<br>
+  <select>
+    <% @nerrors.each do |n| %>
+      <option value="<@=n.id%>"><%=n.error_type%></option>
+    <% end %>
+  <select>
+  <br><br>
+  Resource Definition:<br>
+  <input type="text" name="error_definition"><br>
+  <br>
+  <input type="submit">
+
+</form>
