@@ -1,3 +1,12 @@
+MyApp.before "/resources*" do
+  @current_user = User.find_by_id(session["user_id"])
+    if @current_user == nil
+      redirect "/logins/new"
+    elsif @current_user != 1
+      erb :"admins/admin_only"
+    end
+end
+
 MyApp.get "/resources/new" do
   @nerrors = NamedError.all
   erb :"admins/new"
