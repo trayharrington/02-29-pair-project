@@ -2,11 +2,10 @@
 
 <p>Your Results are as follows:</p>
 
-<p>Error Encountered: <%= %></p>
+<p>Error Encountered: <%=@error.get_processed_error_input["error_type"]%></p>
 
 <p>
-  Error occurred at line: <%= %>
-  In file: <%= %>
+  Error occurred at line: <%=@error.get_processed_error_input["line"] %>
+  In file: <%=@error.get_processed_error_input["file"] %>
 </p> 
 
-<p>Resources:</p>
