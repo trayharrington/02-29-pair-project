@@ -1,0 +1,15 @@
+<h1>Syntax Error!</h1>
+
+<p>Your Results are as follows:</p>
+
+<p>Error Encountered: <%=@error.type_of_error%></p>
+
+<p>
+  Error occurred at line: <%=@error.get_processed_error_input["line"] %>
+
+  In file: <%=@error.get_processed_error_input["file"] %>
+<p>
+  Ruby said:<font color="red"> <%=@error.get_processed_error_input["problem"] %>
+</p> </font>
+<p>
+<center><h3><font color="red">  Syntax Error:</font>  Raised when encountering Ruby code with an invalid syntax.

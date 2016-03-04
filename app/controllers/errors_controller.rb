@@ -14,6 +14,9 @@ MyApp.post "/errors/create" do
   @error.user_id = session[:user_id]
   @error.error_input = params[:error]
   
+  
+  
+  @error.process_error_input
   @error.save
   redirect "/errors/#{@error.id}"
 end
@@ -22,5 +25,5 @@ MyApp.get "/errors/:id" do
   @error = Error.find_by_id(params[:id])
   @error.process_error_input
   
-  erb :"errors/results"
+  erb :"errors/#{@error.type_of_error}"
 end

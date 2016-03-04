@@ -8,6 +8,7 @@ DB.define_table("errors")
 DB.define_column("errors","error_input","text")
 DB.define_column("errors","user_id","integer")
 
+
 DB.define_table("named_errors")
 DB.define_column("named_errors","error_type","string")
 DB.define_column("named_errors","error_definition","string")

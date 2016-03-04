@@ -13,7 +13,7 @@ MyApp.post "/logins/create" do
     session["user_id"] = @user.id
     redirect "/"
   else
-    erb :"login_fail"
+    erb :"logins/fail"
   end
 end
 
