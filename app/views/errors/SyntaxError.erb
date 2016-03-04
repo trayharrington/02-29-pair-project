@@ -5,9 +5,9 @@
 <p>Error Encountered: <%=@error.type_of_error%></p>
 
 <p>
-  Error occurred at line: <%=@error.get_processed_error_input["line"] %>
-
-  In file: <%=@error.get_processed_error_input["file"] %>
+  Error occurred in File: <%=@error.get_processed_error_input["file"] %>
+  <br>
+  At line: <%=@error.get_processed_error_input["line"] %>
 <p>
   Ruby said:<font color="red"> <%=@error.get_processed_error_input["problem"] %>
 </p> </font>

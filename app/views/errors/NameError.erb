@@ -1,0 +1,20 @@
+<h1>Name Error!</h1>
+
+<p>
+  <center><h3>
+    <font color="red">  Name Error:
+    </font>  Raised when a given name is invalid or undefined.
+  </h3></center>
+</p>
+
+<p>
+  Error occurred in file: <b><%=@error.get_processed_error_input["file"] %>
+  <br>
+  At line: <%=@error.get_processed_error_input["line"] %>
+</p>
+
+<p>
+  Your issue lies with either a variable or method "<%= @error.get_processed_error_input["problem"] %>" associated with a <%= @error.get_processed_error_input["what_they_called_it_on"] %>.   
+</p> 
+
+<p>
