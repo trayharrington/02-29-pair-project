@@ -1,0 +1,61 @@
+<h1>Administrative Review Page</h1>
+
+<h3>Named Error List</h3>
+<table border="2">
+  <thead>
+    <tr>
+      <th>Error Type</th>
+      <th colspan="3">Definition</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nerrors.each do |a| %>
+      <tr>
+        <td>a.error_type</td>
+        <td>a.error_definition</td>
+        <td>
+          <form action="/named_errors/<%=a.id%>/edit">
+            <input type="submit" value="Edit">
+          </form>
+        </td>
+        <td>
+          <form action="/named_errors/<%=a.id%>/delete" method="post">
+            <input type="submit" value="Delete">
+          </form>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br><br>
+
+<h3>Resource List</h3>
+<table border="2">
+  <thead>
+    <tr>
+      <th>Error Type</th>
+      <th colspan="3">Resource URL</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @resources.each do |a|%>
+      <tr>
+        <td>a.error_type_id</td>
+        <td>a.resource_url</td>
+        <td>
+          <form action="/resources/<%=a.id%>/edit">
+            <input type="submit" value="Edit">
+          </form>
+        </td>
+        <td>
+          <form action="/resources/<%=a.id%>/delete" method="post">
+            <input type="submit" value="Delete">
+          </form>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
