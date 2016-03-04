@@ -1,20 +1,17 @@
-<h1>Name Error!</h1>
+<h1>NameError</h1>
 
-<p>
-  <center><h3>
-    <font color="red">  Name Error:
-    </font>  Raised when a given name is invalid or undefined.
-  </h3></center>
-</p>
+<p>This usually means you’re calling a method that doesn’t exist or a variable that doesn't exist.</p>
 
-<p>
-  Error occurred in file: <b><%=@error.get_processed_error_input["file"] %>
-  <br>
-  At line: <%=@error.get_processed_error_input["line"] %>
-</p>
+<h2>Helpful Error Text</h2>
 
-<p>
-  Your issue lies with either a variable or method "<%= @error.get_processed_error_input["problem"] %>" associated with a <%= @error.get_processed_error_input["what_they_called_it_on"] %>.   
-</p> 
+<p>Ruby’s text for these errors is usually very helpful. Let's take a look at what Ruby is telling you about your error:</p>
 
-<p>
+<p>After going to <strong><%=@error.get_processed_error_input["file"] %></strong> and line number <strong><%=@error.get_processed_error_input["line"] %></strong>, your first job is to figure out why <code><%= @error.get_processed_error_input["problem"] %></code> seems to not exist.</p>
+
+<h3>If it's a method, then...</h3>
+
+<p>tbd...</p>
+
+<h3>If it's not a method but is instead a variable, then...</h3>
+
+<p>tbd...</p>
