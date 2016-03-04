@@ -1,16 +1,19 @@
+<h3>Edit User</h3>
 
 <form action="/users/<%=@user.id%>/update" method="post">
-  <p>
-    Name:
-    <input type = "text" name = "edit_name" value = "<%= @user.name %>">
-    </p>
-    <p>
-    Email
-    <input type = "text" name = "edit_email" value = "<%= @user.email %>">
-    </p>
-    Password
-    <input type = "text" name = "edit_password" value = "<%= @user.password %>">
-    </p>
-  <input type = "submit">
+    Name:<br>
+    <input type = "text" name = "edit_name" value = "<%= @user.name %>"><br>
+    Email:<br>
+    <input type = "text" name = "edit_email" value = "<%= @user.email %>"><br>
+    Password:<br>
+    <input type = "text" name = "edit_password" value = "<%= @user.password %>"><br>
+    <br>
+    <input type = "submit">
 
 </form>
+
+<br>
+
+<a href="/users">User List</a><br>
+
+<a href="/">Home</a
