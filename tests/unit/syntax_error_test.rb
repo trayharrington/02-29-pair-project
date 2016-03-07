@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class SyntaxErrorTest < Minitest::Test
+  #This method tests the functionality of detecting syntax error messages
   def setup
     super
     @error = Error.new
