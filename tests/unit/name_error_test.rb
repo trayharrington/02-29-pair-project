@@ -1,6 +1,7 @@
 require 'test_helper'
 
-class NameErrorTest < Minitest::Test
+class NameErrorTest < Minitest::Test          
+  #this method tests the functionality of detecting Name Errors
   def setup
     super
     @error = Error.new
