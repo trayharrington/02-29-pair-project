@@ -1,5 +1,5 @@
 class Error < ActiveRecord::Base
-
+  include Process
   def get_processed_error_input
     return @processed_error_input
   end
@@ -8,14 +8,14 @@ class Error < ActiveRecord::Base
   # 
   # Returns a Hash with all the meaningful information about the error.
   def process_error_input
+
+
     if self.type_of_error == "SyntaxError"
-      matches = self.error_input.match(/(\w*.rb):(\d*):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       } 
+      
+      start_processed_error_input
+
     elsif self.type_of_error == "NoMemoryError"
+
       matches = self.error_input.match(/(\w*.rb):(14):/)                              
       @processed_error_input = {
         "file" => matches[1],
@@ -30,6 +30,7 @@ class Error < ActiveRecord::Base
         "error_type" => self.type_of_error
        }          
     elsif self.type_of_error == "LoadError"
+      start_processed_error_input
       matches = self.error_input.match(/(\w*.rb):(14):/)                              
       @processed_error_input = {
         "file" => matches[1],

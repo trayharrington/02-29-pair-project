@@ -18,6 +18,7 @@ MyApp.post "/errors/create" do
   
   @error.process_error_input
   @error.save
+  
   redirect "/errors/#{@error.id}"
 end
 
