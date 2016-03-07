@@ -12,211 +12,91 @@ class Error < ActiveRecord::Base
 
     if self.type_of_error == "SyntaxError"
       
-      start_processed_error_input
+      start_processed_syntax
 
     elsif self.type_of_error == "NoMemoryError"
 
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }      
+      start_processed_nomemory 
     elsif self.type_of_error == "ScriptError"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }          
+      start_processed_script       
     elsif self.type_of_error == "LoadError"
-      start_processed_error_input
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }          
+      start_processed_load
+      
     elsif self.type_of_error == "NotImplementedError"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       } 
+      start_processed_implemented
+      
     elsif self.type_of_error == "SignalException"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }          
+      start_processed_signal
+      
     elsif self.type_of_error == "Interrupt"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }          
+      start_processed_interrupt
+               
     elsif self.type_of_error == "StandardError"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }          
+      start_processed_standard
+      
     elsif self.type_of_error == "ArgumentError"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }          
+      start_processed_argument
+             
     elsif self.type_of_error == "IndexError"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }          
+      start_processed_index
+             
     elsif self.type_of_error == "StopIteration"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }             
+      start_processed_iteration
+                  
     elsif self.type_of_error == "IOError"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }
+      start_processed_ioe
+      
     elsif self.type_of_error == "EOFError"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }
+      start_processed_eofe
+      
     elsif self.type_of_error == "LocalJumpError"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }
+      start_processed_jump
+      
     elsif self.type_of_error == "NameError"
-      matches = self.error_input.match(/(\w*.rb):(\d*):/)
-      other_matches = self.error_input.match(/method `(.*)' for (.*) /)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error,
-        "problem" => other_matches[1],
-        "what_they_called_it_on" => other_matches[2]
-       }
+      start_processed_name
+      
     elsif self.type_of_error == "NoMethodError"
-      matches = self.error_input.match(/(\w*.rb):(14):/)
-                                    
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }
+      start_processed_method
+      
     elsif self.type_of_error == "RangeError"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }
+      start_processed_range
+      
     elsif self.type_of_error == "FloatDomainError"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }
+      start_processed_float
+      
     elsif self.type_of_error == "RegexpError"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }
+      start_processed_regex
+      
     elsif self.type_of_error == "RuntimeError"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }
+      start_processed_runtime
+      
     elsif self.type_of_error == "SecurityError"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }
+      start_processed_security
+      
     elsif self.type_of_error == "SystemCallError"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }
+      start_processed_system
+      
     elsif self.type_of_error == "Errno"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }
+      start_processed_errno
+      
     elsif self.type_of_error == "SystemStackError"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }
+      start_processed_stack
+      
     elsif self.type_of_error == "ThreadError"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }
+      start_processed_thread
+      
     elsif self.type_of_error == "TypeError"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }
+      start_processed_type
+      
     elsif self.type_of_error == "ZeroDivisionError"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }
+      start_processed_division
+      
     elsif self.type_of_error == "SystemExit"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }
+      start_processed_exit
+      
     elsif self.type_of_error == "fatal"
-      matches = self.error_input.match(/(\w*.rb):(14):/)                              
-      @processed_error_input = {
-        "file" => matches[1],
-        "line" => matches[2],
-        "error_type" => self.type_of_error
-       }
-  
+      start_processed_fatal
+      
     end
   end
   def type_of_error
