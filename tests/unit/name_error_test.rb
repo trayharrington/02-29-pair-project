@@ -1,5 +1,5 @@
 require 'test_helper'
-
+  #this method ensures consistancy in the area of sustainability
 class NameErrorTest < Minitest::Test          
   #this method tests the functionality of detecting Name Errors
   def setup
