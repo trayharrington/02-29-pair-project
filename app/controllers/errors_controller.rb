@@ -15,8 +15,8 @@ MyApp.post "/errors/create" do
   @error.error_input = params[:error]
   
   
-  
   @error.process_error_input
+
   @error.save
   
   redirect "/errors/#{@error.id}"
