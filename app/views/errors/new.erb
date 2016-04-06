@@ -1,19 +1,34 @@
-<h1>Welcome to your Error Decoder!</h1>
+<div class="container">
+<center><h1>RuBug</h1></center>
 
 <br>
 
-<form action="/errors/create" method="post">
-  Paste Your Error Here:<br>
-  <textarea name="error" rows="20" cols="180"></textarea>
+
+<form role ="form" action="/errors/create" method="post">
+  <div class = "form-group">
+  <label for ="name">Input Error Message Here:</label>
+  <textarea class ="form-control" name="error" rows="20" cols="180"></textarea>
+  
   <br>
-  <input type = "submit">
+  <button type="button" input type = "submit"class="btn btn-sm btn-info-outline">Submit</button>
 </form>
 
 <br><br>
 
-<a href="/">Home</a>
+</div>
+  
 
-
-
-
-
+  <nav class="navbar navbar-dark bg-inverse" style="background-color: #grey;">
+  <ul class="nav navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/users">User List</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">About</a>
+    </li>
+  </ul>
+</nav>
+</div>
