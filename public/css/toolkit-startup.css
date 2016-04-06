@@ -225,8 +225,14 @@ th {
   h3 {
     page-break-after: avoid;
   }
+  .navbar-nav{
+    padding-left: 136px;
+  }
   .navbar {
     display: none;
+
+    margin: 0;
+    
   }
   .btn > .caret,
   .dropup > .btn > .caret {
@@ -3348,6 +3354,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   min-height: 50px;
   margin-bottom: 21px;
   border: 1px solid transparent;
+  padding-left:136px;
 }
 @media (min-width: 768px) {
   .navbar {
