@@ -1,18 +1,23 @@
-<h3>Please enter information to Sign Up!</h3>
-
-<form action="/users/create" method="post">
-    Name:<br>
-    <input type = "text" name = "name" value = ""><br>
-    Email:<br>
-    <input type = "text" name = "email" value = ""><br>
-    Password:<br>
-    <input type = "text" name = "password" value = ""><br>
-    <br>
-    <input type = "submit">
-
-</form>
-
-<br>
-
-<a href="/">Home</a>
-
+<div class="block text-center">
+  <div class="container-fluid">
+    <h3 class="m-b-md">
+      Sign up for an account and start receiving debugging help <strong>today</strong>!
+    </h3>
+    <form class="form-block" action="/users/create" method="post" style="margin :0 500px">
+      <input class="form-control m-b" name="name" placeholder="Name">
+      <input class="form-control m-b" name="email" placeholder="email address">
+      <input class="form-control m-b" name="password" type="password" placeholder="Create a Password">
+      <button class="btn btn-primary m-b">Create Account</button>
+    </form>
+  </div>
+</div>
+<div class="block block-bordered text-center">
+  <div class="container-fluid">
+   <blockquote class="pull-quote">
+      <p>
+        “Helping Debug your code more efficiently - Because your time is valuable.”
+      </p>
+      <cite>Mike & Tray, co-creators</cite>
+    </blockquote>
+  </div>
+</div>
