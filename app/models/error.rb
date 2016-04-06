@@ -10,7 +10,7 @@ class Error < ActiveRecord::Base
   # unique search for the particular information to display
   def process_error_input
     if self.type_of_error == "SyntaxError"
-      start_processed_syntax
+      start_processed_syntax        
     elsif self.type_of_error == "NoMemoryError"
       start_processed_nomemory 
     elsif self.type_of_error == "ScriptError"

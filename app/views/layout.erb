@@ -2,14 +2,22 @@
 <html>
 <head>
   <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
   <title>My Application</title>
 </head>
 
 <body>
+<link href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600' rel='stylesheet' type='text/css'>
+<link href="/css/toolkit-startup.css" rel="stylesheet">
   <!-- This is what a code comment in HTML looks like. -->
 
   <!-- The `yield` below is where the contents of a view file are put. -->
   <!-- Then the combined layout + view is sent back to the client. -->
   <%= yield %>
+  <script src="/js/jquery.js"></script>
+  <script src="/js/toolkit.js"></script>
+  <script src="/js/application.js"></script>
 </body>
 </html>

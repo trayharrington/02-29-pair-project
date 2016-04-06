@@ -19,7 +19,7 @@ class NameErrorTest < Minitest::Test
   def test_error_file
     assert_equal("string_segmenter.rb", @error.get_processed_error_input["file"])
   end
-
+ 
   def test_error_line
     assert_equal("14", @error.get_processed_error_input["line"])
   end

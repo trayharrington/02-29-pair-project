@@ -117,7 +117,7 @@ module Process
        }
   end
   def start_processed_name
-    matches = self.error_input.match(/(\w*.rb):(\d*):/)
+      matches = self.error_input.match(/(\w*.rb):(\d*):/)
       other_matches = self.error_input.match(/method `(.*)' for (.*) /)                              
       @processed_error_input = {
         "file" => matches[1],
