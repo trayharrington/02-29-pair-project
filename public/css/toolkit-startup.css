@@ -226,7 +226,7 @@ th {
     page-break-after: avoid;
   }
   .navbar-nav{
-    padding-left: 136px;
+    padding-left: 240px;
   }
   .navbar {
     display: none;
@@ -3354,11 +3354,12 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   min-height: 50px;
   margin-bottom: 21px;
   border: 1px solid transparent;
-  padding-left:136px;
+  
 }
 @media (min-width: 768px) {
   .navbar {
     border-radius: 4px;
+    padding-left:136px;
   }
 }
 @media (min-width: 768px) {

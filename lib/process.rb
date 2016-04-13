@@ -69,10 +69,11 @@ module Process
        }          
   end
   def start_processed_argument
-    matches = self.error_input.match(/(\w*)(.*\d.*)/) ###----need new filter                              
+    matches = self.error_input.match(/([_a-zA-Z]*.rb).(:*\d*)...([^:]'*\D*.*')/) ###----need new filter                              
       @processed_error_input = {
         "file" => matches[1],
         "line" => matches[2],
+        "method" => matches[3],
         "error_type" => self.type_of_error
        }   
   end
