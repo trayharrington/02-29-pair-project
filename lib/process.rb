@@ -69,7 +69,7 @@ module Process
        }          
   end
   def start_processed_argument
-    matches = self.error_input.match(/([_a-zA-Z]*.rb).(:*\d*)...([^:]'*\D*.*')/) ###----need new filter                              
+    matches = self.error_input.match(/([_a-zA-Z]*.rb).(:*\d*).....([^:]'*\D*.*)./)                          
       @processed_error_input = {
         "file" => matches[1],
         "line" => matches[2],
@@ -210,7 +210,7 @@ module Process
        }
   end
   def start_processed_type
-    matches = self.error_input.match(/(\w*.rb):(\d*):/)                              
+    matches = self.error_input.match(/(\w*.rb):(\d*)/)
       @processed_error_input = {
         "file" => matches[1],
         "line" => matches[2],

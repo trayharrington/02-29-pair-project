@@ -25,6 +25,6 @@ class ArgumentErrorTest < Minitest::Test
   end
   
   def test_error_method
-    assert_equal(" `test_string_segmenter'",@error.get_processed_error_input["method"])
+    assert_equal("test_string_segmenter", @error.get_processed_error_input["method"])
   end
 end
