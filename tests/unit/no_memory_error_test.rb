@@ -24,7 +24,7 @@ class NoMemoryErrorTest < Minitest::Test
   end
 
   def test_error_problem
-    assert_equal("`discover_new_element'", @error.get_processed_error_input["problem"])
+    assert_equal(" `create_main_object'", @error.get_processed_error_input["problem"])
   end
   # Your tests are defined here.
 end

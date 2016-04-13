@@ -67,12 +67,12 @@ class Error < ActiveRecord::Base
       start_processed_exit
     elsif self.type_of_error == "fatal"
       start_processed_fatal
-    end
+    end                                       
   end
   def type_of_error
     match = self.error_input.match(/(SyntaxError|NoMemoryError|ScriptError|LoadError|NotImplementedError|SignalException|Interrupt|StandardError|ArgumentError|IndexError|StopIteration|IOError|EOFError|LocalJumpError|NameError|NoMethodError|RangeError|FloatDomainError|RegexpError|RuntimeError|SecurityError|SystemCallError|Errno|SystemStackError|ThreadError|TypeError|ZeroDivisionError|SystemExit|fatal)/)
-    return match[1]
-    #type_of_error searches only for the name of the error
+    return match[0]
+    #type_of_error searches only for the name of the error its called
     #the name might get found more than once, so we express to return '1'
   end
   

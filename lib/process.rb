@@ -12,7 +12,7 @@ module Process
   #depending on the individual message.
   end
   def start_processed_nomemory
-      @matches = self.error_input.match(/([a-zA-Z]*.rb).(:*\d*)...([^:]'*\D*.*'):/)
+      @matches = self.error_input.match(/([a-zA-Z]*.rb).(:*\d*)...([^:]'*\D*.*')/)
       @processed_error_input = {
         "file" => @matches[1],
         "line" => @matches[2],
@@ -69,7 +69,7 @@ module Process
        }          
   end
   def start_processed_argument
-    matches = self.error_input.match(/(\w*)(.*\d.*):/) ###----need new filter                              
+    matches = self.error_input.match(/(\w*)(.*\d.*)/) ###----need new filter                              
       @processed_error_input = {
         "file" => matches[1],
         "line" => matches[2],
