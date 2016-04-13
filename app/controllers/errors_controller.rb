@@ -20,8 +20,9 @@ MyApp.post "/errors/create" do
 end
 
 MyApp.get "/errors/:id" do
-  @error = Error.find_by_id(params[:id])
-  @error.process_error_input
+  error = Error.find_by_id(params[:id])
   
-  erb :"errors/#{@error.type_of_error}"
+  @processed_error = ParsedError.new(error)
+  
+  erb :"errors/#{@processed_error.type_of_error}"
 end

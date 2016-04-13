@@ -7,24 +7,24 @@ class NoMemoryErrorTest < Minitest::Test
     @error = Error.new
     @error.error_input = "NoMemoryError (failed to allocate memory):C:/InstantRails-2.0-win/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/cache.rb:60:in `create_main_object'"
 
-    @error.process_error_input
-    # Your setup goes here.
+    @parsed_error = ParsedError.new(@error.error_input)
+    @parsed_error.process_error_input
   end
 
   def test_error_type
-    assert_equal("NoMemoryError", @error.type_of_error)
+    assert_equal("NoMemoryError", @parsed_error.type_of_error)
   end
 
   def test_error_file
-    assert_equal("cache.rb", @error.get_processed_error_input["file"])
+    assert_equal("cache.rb", @parsed_error.processed_error_input["file"])
   end
 
   def test_error_line
-    assert_equal("60", @error.get_processed_error_input["line"])
+    assert_equal("60", @parsed_error.processed_error_input["line"])
   end
 
   def test_error_problem
-    assert_equal(" `create_main_object'", @error.get_processed_error_input["problem"])
+    assert_equal(" `create_main_object'", @parsed_error.processed_error_input["problem"])
   end
   # Your tests are defined here.
 end
