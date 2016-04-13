@@ -1,12 +1,12 @@
 <center><h1>ArgumentError</h1></center>
 
-<p>The method <code><%= @error.get_processed_error_input["method"]%></code> wasnt given the right number of arguments when it was called.</p>
+<p>The method <code><%= @processed_error.processed_error_input["method"]%></code> wasnt given the right number of arguments when it was called.</p>
 
 <p>This error means that you're calling a valid method; but that methods expects a certain number of inputs, which you are not providing.</p>
 
 <h3>Solution</h3>
 
-<p>After going to <strong><%=@error.get_processed_error_input["file"] %></strong> and line number <strong><%=@error.get_processed_error_input["line"] %></strong>, your first job is to figure out how many arguments <code><%= @error.get_processed_error_input["method"] %></code> requires, and why those arguments were not given.</p>
+<p>After going to <strong><%=@processed_error.processed_error_input["file"] %></strong> and line number <strong><%=@processed_error.processed_error_input["line"] %></strong>, your first job is to figure out how many arguments <code><%= @processed_error.processed_error_input["method"] %></code> requires, and why those arguments were not given.</p>
 
 <p>To do this, you need to go to where the method is defined.  If the method is built into a Ruby class (such as methods for Array), then go to the Ruby Array Documentation</p>
 <p>Once you've found the method, read about how it should be used. Compare that with how you're using it.</p>

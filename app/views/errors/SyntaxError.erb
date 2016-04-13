@@ -14,9 +14,9 @@
 <h2>Helpful Error Text</h2>
 
 <p>
-  Error occurred in File: <%=@error.get_processed_error_input["file"] %>
+  Error occurred in File: <%=@processed_error.processed_error_input["file"] %>
   <br>
-  At line: <%=@error.get_processed_error_input["line"] %>
+  At line: <%=@processed_error.processed_error_input["line"] %>
 </p>
 
 <h2>Beware Line Number Distractions</h2>
@@ -25,7 +25,7 @@
 
 <h2>Solution</h2>
 
-<p>You should open <strong><%= @error.get_processed_error_input["file"] %></strong> and carefully go through it, looking looking for the missing or extraneous character(s).</p>
+<p>You should open <strong><%= @processed_error.processed_error_input["file"] %></strong> and carefully go through it, looking looking for the missing or extraneous character(s).</p>
 
 <p>It can also be helpful to systematically comment out large chunks of code to narrow down which part of a file the error might be in. Whether this is more effective/efficient than simply scanning your code diligently depends on the particulars of the situation.</p>
 

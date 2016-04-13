@@ -5,17 +5,22 @@ class ParsedError
 
   def initialize(error_input)
     @error_input = error_input
+    self.process_error_input
   end
 
   def type_of_error
     match = @error_input.match(/(SyntaxError|NoMemoryError|ScriptError|LoadError|NotImplementedError|SignalException|Interrupt|StandardError|ArgumentError|IndexError|StopIteration|IOError|EOFError|LocalJumpError|NameError|NoMethodError|RangeError|FloatDomainError|RegexpError|RuntimeError|SecurityError|SystemCallError|Errno|SystemStackError|ThreadError|TypeError|ZeroDivisionError|SystemExit|fatal)/)
 
-    return match[0]
+    if match.nil?
+      nil
+    else
+      return match[0]
+    end
     #type_of_error searches only for the name of the error its called
     #the name might get found more than once, so we express to return '1'
   end
 
-  #get_processed_error_input displays the error information
+  #processed_error_input displays the error information
   #
   # process_error_input, based on the value of type_of_error, begins a
   # 

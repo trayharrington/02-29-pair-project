@@ -1,4 +1,4 @@
-<h1>NameError</h1>
+<h1>NoMethodError</h1>
 
 <p>This usually means you’re calling a method that doesn’t exist or a variable that doesn't exist.</p>
 
@@ -6,7 +6,7 @@
 
 <p>Ruby’s text for these errors is usually very helpful. Let's take a look at what Ruby is telling you about your error:</p>
 
-<p>After going to <strong><%=@error.processed_error_input["file"] %></strong> and line number <strong><%=@error.processed_error_input["line"] %></strong>, your first job is to figure out why <code><%= @error.processed_error_input["problem"] %></code> seems to not exist.</p>
+<p>After going to <strong><%=@processed_error.processed_error_input["file"] %></strong> and line number <strong><%=@processed_error.processed_error_input["line"] %></strong>, your first job is to figure out why <code><%= @processed_error.processed_error_input["problem"] %></code> seems to not exist.</p>
 
 <h3>If it's a method, then...</h3>
 

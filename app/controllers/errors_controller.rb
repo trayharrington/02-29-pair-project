@@ -22,7 +22,7 @@ end
 MyApp.get "/errors/:id" do
   error = Error.find_by_id(params[:id])
   
-  @processed_error = ParsedError.new(error)
+  @processed_error = ParsedError.new(error.error_input)
   
   erb :"errors/#{@processed_error.type_of_error}"
 end
