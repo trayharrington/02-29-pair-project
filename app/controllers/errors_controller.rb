@@ -13,9 +13,6 @@ MyApp.post "/errors/create" do
   @error = Error.new
   @error.user_id = session[:user_id]
   @error.error_input = params[:error]
-  
-  
-  @error.process_error_input
 
   @error.save
   
