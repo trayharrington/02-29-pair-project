@@ -13,22 +13,40 @@
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="/users/new">
-        <span class="icon icon-user"></span> Create an Account</a>
-      </li>
-      <li><a href="/logins/new">
-        <span class="icon icon-login"></span> Login</a>
-      </li>
+      <% @current_user = User.find_by_id(session["user_id"]) %>
+        <% if @current_user == nil %>
+          <li><a href="/users/new">
+            <span class="icon icon-user"></span> Create an Account</a>
+          </li>
+          <li><a href="/logins/new">
+            <span class="icon icon-login"></span> Login</a>
+          </li>
+        <% else %>
+          <p class="navbar-text">Signed in as <%= @current_user.name %></p>
+          <li><a href="/logins/delete">
+            <span class="icon icon-logout"></span> Log Out</a>
+          </li>
+        <% end %>
     </ul>
   </div>
 </nav>
 
-<div class="container">
-  <div class="block text-center">
-    <h1 class="block-title">Welcome to Ruby Rx</h1>
-      <h4 class="text-muted">Please follow the links below in order to get started</h4>
+
+<div class="block text-center">
+  <h1 class="block-title">Welcome to Ruby Rx</h1>
+  <h4 class="text-muted">Please follow the links above in order to get started</h4>
+</div>
+
+<div class="block block-bordered text-center">
+  <div class="container-fluid">
+   <blockquote class="pull-quote">
+      <p>
+        “Helping Debug your code more efficiently - Because your time is valuable.”
+      </p>
+      <cite>Mike & Tray, co-creators</cite>
+    </blockquote>
   </div>
-</div> 
+</div>
 
 
 

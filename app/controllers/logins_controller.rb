@@ -19,5 +19,5 @@ end
 
 MyApp.get "/logins/delete" do
   session["user_id"] = nil
-  redirect "login/home"
+  redirect "/"
 end
